@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sriram - Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">SRIRAM</h1>
+                <p class="title">Full Stack Developer | Software Engineer</p>
+                <div class="contact-info">
+                    <span>📧 email@example.com</span>
+                    <span>📱 +1 (555) 123-4567</span>
+                    <span>📍 City, State</span>
+                    <span>💼 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></span>
+                    <span>💻 <a href="https://github.com/yourusername" target="_blank">GitHub</a></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Professional Summary -->
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p>
+                    Experienced and results-driven software engineer with a passion for creating innovative solutions.
+                    Skilled in full-stack development with expertise in modern web technologies. Proven track record
+                    of delivering high-quality projects on time and collaborating effectively with cross-functional teams.
+                </p>
+            </section>
+
+            <!-- Experience -->
+            <section class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <h3 class="job-title">Senior Software Engineer</h3>
+                        <span class="job-date">Jan 2022 - Present</span>
+                    </div>
+                    <p class="company">Tech Company Inc. | Remote</p>
+                    <ul class="job-description">
+                        <li>Led development of microservices architecture serving 1M+ users</li>
+                        <li>Improved application performance by 40% through optimization</li>
+                        <li>Mentored junior developers and conducted code reviews</li>
+                        <li>Implemented CI/CD pipelines using GitHub Actions</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <h3 class="job-title">Software Developer</h3>
+                        <span class="job-date">Jun 2020 - Dec 2021</span>
+                    </div>
+                    <p class="company">StartupXYZ | City, State</p>
+                    <ul class="job-description">
+                        <li>Developed and maintained React-based web applications</li>
+                        <li>Built REST APIs using Node.js and Express</li>
+                        <li>Collaborated with designers to implement UI/UX designs</li>
+                        <li>Reduced load time by 35% through code optimization</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Frontend</h4>
+                        <p>React, Vue.js, TypeScript, Tailwind CSS, HTML5, CSS3, JavaScript</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Backend</h4>
+                        <p>Node.js, Express, Python, Django, REST APIs, GraphQL</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Databases</h4>
+                        <p>PostgreSQL, MongoDB, Redis, MySQL</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps & Tools</h4>
+                        <p>Docker, Kubernetes, GitHub, Git, AWS, Linux</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Other</h4>
+                        <p>Agile/Scrum, Problem Solving, Team Leadership, System Design</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="education-header">
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <span class="edu-date">2020</span>
+                    </div>
+                    <p class="university">University Name | City, State</p>
+                    <p class="edu-detail">GPA: 3.8/4.0 | Dean's List (All Semesters)</p>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="section">
+                <h2 class="section-title">Projects</h2>
+                
+                <div class="project">
+                    <h3 class="project-title">E-Commerce Platform</h3>
+                    <p class="project-tech"><strong>Tech Stack:</strong> React, Node.js, PostgreSQL, Stripe API</p>
+                    <p class="project-description">
+                        Built a full-stack e-commerce platform with user authentication, product management,
+                        and payment integration. Implemented responsive design and achieved 98% Lighthouse score.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3 class="project-title">Task Management Dashboard</h3>
+                    <p class="project-tech"><strong>Tech Stack:</strong> Vue.js, Firebase, Vuetify</p>
+                    <p class="project-description">
+                        Developed a real-time collaborative task management tool with drag-and-drop functionality,
+                        user roles, and notifications. 500+ active users.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="section">
+                <h2 class="section-title">Certifications</h2>
+                <ul class="certifications-list">
+                    <li>AWS Certified Solutions Architect – Associate</li>
+                    <li>Google Cloud Professional Data Engineer</li>
+                    <li>Certified Kubernetes Application Developer (CKAD)</li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <button class="download-btn" onclick="downloadPDF()">📥 Download as PDF</button>
+            <p class="footer-text">© 2025 Sriram. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- HTML2PDF Library for PDF Export (Embedded) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- PDF Download Script -->
+    <script>
+        /**
+         * Download resume as PDF - Embedded Script
+         * Uses html2pdf library
+         */
+        function downloadPDF() {
+            const element = document.querySelector('.container');
+            const footer = document.querySelector('.footer');
+            
+            // Hide footer during PDF generation
+            if (footer) {
+                footer.style.display = 'none';
+            }
+            
+            const opt = {
+                margin: [5, 5, 5, 5],
+                filename: 'Sriram_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4', compress: true },
+                pagebreak: { mode: ['avoid-all'] }
+            };
+
+            // Check if html2pdf is loaded
+            if (typeof html2pdf !== 'undefined') {
+                html2pdf().set(opt).from(element).save().then(() => {
+                    // Show footer after PDF generation
+                    if (footer) {
+                        footer.style.display = 'block';
+                    }
+                });
+            } else {
+                // Fallback to browser print dialog if html2pdf is not loaded
+                if (footer) {
+                    footer.style.display = 'block';
+                }
+                alert('PDF library not loaded. Using browser print dialog instead.\nPress Ctrl+P to print as PDF.');
+                window.print();
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Resume loaded successfully');
+        });
+    </script>
+</body>
+</html>
