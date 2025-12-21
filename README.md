@@ -310,7 +310,7 @@ Resume/
 
 - **Email**: srirampushpa1998@gmail.com
 - **GitHub**: [@sriram981998](https://github.com/sriram981998)
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+- **LinkedIn**: [Your LinkedIn Profile](www.linkedin.com/in/sridhar-sriram-3a369718b)
 
 ## 📄 License
 
