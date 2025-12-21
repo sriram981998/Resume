@@ -6,22 +6,22 @@ Welcome to my resume repository! A modern, single-file, responsive resume hosted
 
 - ✨ **Modern Design** - Professional gradient header with clean typography
 - 📱 **Fully Responsive** - Adapts perfectly to desktop, tablet, and mobile devices
-- 📥 **One-Click PDF Export** - Download as PDF directly from the browser
-- 🎨 **Single-File** - All HTML, CSS, and JavaScript in one file (no dependencies except html2pdf CDN)
+- 📥 **One-Click PDF Export** - Download as PDF directly from the browser with full color preservation
+- 🎨 **Single-File** - All HTML, CSS, and JavaScript in one file (no external dependencies)
 - 🚀 **Fast Loading** - Lightweight and optimized for performance
-- 🖨️ **Print-Optimized** - Perfect print styling to avoid blank pages
+- 🖨️ **Print-Optimized** - Perfect print styling with theme-aware colors (dark/light mode support)
 - 💼 **ATS-Friendly** - Clean semantic HTML for applicant tracking systems
 
 ## 📋 What's Inside
 
 The resume includes the following sections:
 
-- **Header** - Name, title, and contact information (email, phone, GitHub)
-- **Professional Summary** - Brief overview of your experience and expertise
-- **Experience** - Detailed job history with achievements and responsibilities
-- **Skills** - Organized by categories (Frontend, Backend, Databases, DevOps)
+- **Home/Welcome** - Introduction and overview
+- **Professional Summary** - Brief overview of expertise with key highlights
+- **Experience** - Detailed work history with achievements and technologies used
+- **Projects** - Portfolio of significant projects with descriptions
+- **Skills** - Organized by categories with visual tags
 - **Education** - Academic background and achievements
-- **Certifications** - Professional credentials and certifications
 
 ## 🚀 Quick Start
 
@@ -78,25 +78,28 @@ Each section is clearly labeled:
 - **Education** - Add your university, degree, and GPA
 - **Certifications** - List your professional certifications
 
-### 3. Customize Colors
+## 🎨 Interactive Features
 
-The design uses a purple gradient (`#667eea` to `#764ba2`). To change colors, find the `.header` style rule:
+### 🌓 Dark/Light Mode Toggle
+- **Smart Theme Switching** - Toggle between dark and light modes with a click
+- **Persistent Preference** - Your theme choice is saved in browser storage
+- **Theme-Aware Printing** - When you download as PDF:
+  - Dark mode prints with dark background and light text
+  - Light mode prints with white background and dark text
+  - All colors are preserved exactly as displayed
 
-```css
-.header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-```
+### 📱 Responsive Sidebar Navigation
+- **Mobile-Friendly** - Hamburger menu on smaller screens
+- **Smooth Scrolling** - Click any navigation item to smoothly scroll to that section
+- **Active Highlighting** - Current section is highlighted as you scroll
+- **Fixed Sidebar** - Navigation always accessible on desktop
 
-Replace with your preferred colors. Other key colors:
-
-```css
-:root {
-    --accent: #0066ff;  /* Main accent color (blue links, buttons) */
-    --text: #1a202c;    /* Body text color */
-    --muted: #718096;   /* Secondary text color */
-}
-```
+### 📥 Advanced PDF Download
+- **No External Libraries** - Uses native browser print functionality
+- **Full Color Preservation** - All colors, gradients, and styling preserved in PDF
+- **Theme-Aware Output** - PDF respects your current dark/light mode preference
+- **Professional Formatting** - Cards, tags, and highlights render perfectly
+- **Client-Side Generation** - No server uploads, completely private
 
 ### 4. Modify Typography
 
@@ -134,81 +137,68 @@ To add a new section, copy this template:
 
 To remove a section, simply delete the entire `<section>` block.
 
-## 📥 PDF Download Options
+## 📥 PDF Download Guide
 
-### Method 1: Browser Button (Recommended)
-- Click the **"📥 Download as PDF"** button on the resume
-- PDF is generated client-side using html2pdf.js
-- No file uploads or server required
-- Works offline once the page loads
+### How to Download
 
-### Method 2: Browser Print Dialog
-1. Press `Ctrl+P` (Windows) or `Cmd+P` (Mac)
-2. Select "Save as PDF"
-3. Choose your download location
-4. Click "Save"
+1. **Click the "Download Resume" button** in the sidebar (or on mobile, in the hamburger menu)
+2. **Choose "Save as PDF"** in the print dialog that appears
+3. **Your resume downloads** with all colors and formatting preserved
 
-### Method 3: Headless Browser (Node.js)
+### What You Get
 
-For automated PDF generation, use Puppeteer:
+✅ **Colors & Styling Preserved** - All gradients, card colors, and text colors render perfectly
+✅ **Theme-Aware** - If you're in dark mode, the PDF prints in dark mode; light mode prints light
+✅ **Professional Formatting** - Cards, tags, icons, and spacing all look professional
+✅ **No Dependencies** - Uses browser's native print function (no external PDF libraries)
+✅ **Completely Private** - Generated entirely in your browser; nothing uploaded to servers
 
-```bash
-npm install puppeteer
-```
+### Print Quality Tips
 
-Create a `generate-pdf.js` file:
+- **Use Chrome/Edge** - Best print output quality
+- **Disable Headers/Footers** - In print settings, turn off header/footer for cleaner output
+- **Save as PDF** - Select "Save as PDF" instead of printing to paper
+- **Check Preview** - Most browsers show a preview before saving; verify it looks good
 
-```javascript
-const puppeteer = require('puppeteer');
+## 🎨 Design & Customization
 
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.goto('file://' + __dirname + '/index.html', { waitUntil: 'networkidle2' });
-  await page.pdf({ path: 'Sriram_Resume.pdf', format: 'A4' });
-  await browser.close();
-})();
-```
+### Color Scheme
 
-Run it:
+The resume uses a modern blue gradient design with theme support:
 
-```bash
-node generate-pdf.js
-```
+- **Primary Accent**: #0066ff (Blue)
+- **Secondary Accent**: #ff0066 (Pink/Magenta)
+- **Light Mode Text**: #333 (Dark Gray)
+- **Dark Mode Text**: #e8e8e8 (Light Gray)
+- **Dark Mode Background**: #1a1a1a (Almost Black)
 
-## 🎨 Design Customization Examples
+To customize colors, find the CSS variable definitions near the top of the style block:
 
-### Color Schemes
-
-#### Professional Blue
 ```css
-.header {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-}
 :root {
-    --accent: #0052cc;
+    /* Update these color values */
+    --primary: #0066ff;
+    --primary-dark: #0052cc;
+    --secondary: #ff0066;
+    --text: #333;
+    --bg: #ffffff;
+}
+
+body.dark-mode {
+    /* Dark mode colors */
+    --text: #e8e8e8;
+    --bg: #1a1a1a;
 }
 ```
 
-#### Modern Dark
-```css
-.header {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-}
-:root {
-    --accent: #ff6b6b;
-}
-```
+### Gradient Effects
 
-#### Green Tech
-```css
-.header {
-    background: linear-gradient(135deg, #0d3b66 0%, #06d6a0 100%);
-}
-:root {
-    --accent: #06d6a0;
-}
-```
+The design includes smooth gradients on:
+- **Sidebar background** - Subtle gradient with transparency
+- **Section icons** - Bold gradient backgrounds
+- **Links and hover states** - Smooth transitions
+
+To adjust gradients, search for `linear-gradient` in the CSS.
 
 ### Responsive Breakpoints
 
@@ -257,22 +247,12 @@ Update the `<head>` section for better SEO:
 
 ## 📊 Print Optimization
 
-The resume includes special CSS rules for printing:
+The resume includes comprehensive CSS rules for printing with:
 
-```css
-@media print {
-    body { background: white; }
-    .resume { box-shadow: none; border-radius: 0; }
-    .download-btn { display: none; }
-    .footer { display: none; }
-}
-```
-
-**Print Tips:**
-- Margins are set to 12mm for standard printing
-- The download button is hidden when printing
-- No unnecessary shadows or decorations appear in print
-- Professional, clean output suitable for job applications
+- **Color Preservation** - All colors, gradients, and styling are preserved in PDF
+- **Theme-Aware Output** - Dark/light mode colors are applied to the PDF based on your current preference
+- **Professional Formatting** - Proper spacing, page breaks, and card styling
+- **Optimized Margins** - Standard printing margins for professional presentation
 
 ## 🔗 Deploy Your Resume
 
@@ -298,59 +278,6 @@ Make your resume live on the internet in minutes:
    - Your resume will be available at: `https://sriram981998.github.io/Resume/`
    - Share this link with employers!
 
-### Other Hosting Options
-
-- **Vercel** - Instant deployment: `vercel.com` (supports GitHub integration)
-- **Netlify** - Drag & drop or GitHub: `netlify.com`
-- **Personal Website** - Host on your own domain
-- **Heroku** - Free tier available (no longer free as of 2024)
-
-### Custom Domain
-
-To use your own domain (e.g., `resume.yourname.com`):
-
-1. Set up your domain DNS to point to GitHub Pages
-2. Add a `CNAME` file to your repo with your domain
-3. Enable "Enforce HTTPS" in settings
-
-**For more details:** [GitHub Pages Documentation](https://docs.github.com/en/pages)
-
-## 💡 Best Practices
-
-### Resume Tips
-
-1. **Keep It Concise** - One page is ideal; most recruiters spend < 6 seconds reviewing
-2. **Use Metrics** - Quantify achievements: "improved performance by 40%" instead of "improved performance"
-3. **Action Verbs** - Start bullet points with strong verbs: Led, Built, Designed, Implemented
-4. **Tailor Content** - Customize for each job application; match keywords from job description
-5. **Proofread** - Check for typos, grammar, and consistency
-6. **Recent First** - List experience in reverse chronological order
-7. **Keep It Updated** - Refresh regularly with new projects and skills
-
-### Technical Optimization
-
-- Test in multiple browsers (Chrome, Firefox, Safari, Edge)
-- Test PDF download on different devices
-- Verify print output looks professional
-- Check mobile responsiveness
-- Ensure all links work correctly
-- Use semantic HTML for accessibility
-
-### Git Best Practices
-
-```bash
-# Create feature branch for major changes
-git checkout -b update/skills
-
-# Commit with clear messages
-git commit -m "Update skills section and add new certification"
-
-# Keep history clean
-git push origin update/skills
-
-# Create pull request for review before merging
-```
-
 ## 📄 Technical Details
 
 ### Architecture
@@ -372,38 +299,18 @@ Resume/
 
 ### Technologies Used
 
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with Grid and Flexbox
-- **Vanilla JavaScript** - No frameworks, lightweight
-- **html2pdf.js** - Client-side PDF generation
+- **HTML5** - Semantic markup with proper structure
+- **CSS3** - Modern styling with CSS Grid, Flexbox, and CSS Variables
+- **Vanilla JavaScript** - No frameworks, lightweight (~300 lines)
+- **Google Fonts** - Professional typography (Merriweather, Inter)
+- **Font Awesome 6** - High-quality icons
 
-### Browser Support
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Android)
-
-**Note:** PDF download requires JavaScript enabled in your browser.
-
-## 🤝 Contributing
-
-Found an improvement or bug? Feel free to fork this repository and submit a pull request!
-
-### How to Contribute
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## � Contact & Social
 
-- **Email**: email@example.com
+- **Email**: srirampushpa1998@gmail.com
 - **GitHub**: [@sriram981998](https://github.com/sriram981998)
 - **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- **Website**: [Your Personal Website](https://yourwebsite.com)
 
 ## 📄 License
 
@@ -435,6 +342,6 @@ node generate-pdf.js
 
 ---
 
-**Last Updated**: November 14, 2025
+**Last Updated**: December 21, 2025
 
-**Happy Job Hunting! 🎯**
+**Version**: 2.0 - Complete Interactive Resume with Advanced PDF Export
