@@ -11,6 +11,8 @@ Welcome to my resume repository! A modern, single-file, responsive resume hosted
 - 🚀 **Fast Loading** - Lightweight and optimized for performance
 - 🖨️ **Print-Optimized** - Perfect print styling with theme-aware colors (dark/light mode support)
 - 💼 **ATS-Friendly** - Clean semantic HTML for applicant tracking systems
+- 🖼️ **Profile Image** - Professional profile photo in sidebar and print header with circular layout
+- 🔗 **Linked Contact Info** - Clickable email, phone, GitHub, and LinkedIn links in print header
 
 ## 📋 What's Inside
 
@@ -152,6 +154,8 @@ To remove a section, simply delete the entire `<section>` block.
 ✅ **Professional Formatting** - Cards, tags, icons, and spacing all look professional
 ✅ **No Dependencies** - Uses browser's native print function (no external PDF libraries)
 ✅ **Completely Private** - Generated entirely in your browser; nothing uploaded to servers
+✅ **Professional Header** - Print header with your profile image, name, and all contact links
+✅ **Circular Profile Image** - Your profile photo displays as a perfect circle in the print header
 
 ### Print Quality Tips
 
@@ -342,6 +346,6 @@ node generate-pdf.js
 
 ---
 
-**Last Updated**: December 21, 2025
+**Last Updated**: December 22, 2025
 
-**Version**: 2.0 - Complete Interactive Resume with Advanced PDF Export
+**Version**: 2.1 - Added Profile Image, Circular Layout, and Linked Contact Header

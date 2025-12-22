@@ -116,6 +116,14 @@
             margin: 0 auto 20px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
             animation: float 3s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         @keyframes float {
@@ -525,6 +533,10 @@
             margin-bottom: 30px;
         }
 
+        .print-header {
+            display: none;
+        }
+
         .summary-highlights {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -574,6 +586,10 @@
 
             .section-header h2 {
                 font-size: 32px;
+            }
+
+            .print-header {
+                display: none;
             }
         }
 
@@ -693,6 +709,75 @@
             .sidebar,
             .menu-toggle {
                 display: none !important;
+            }
+
+            /* Print Header */
+            .main-content::before {
+                content: '';
+                display: block;
+                margin-bottom: 40px;
+                padding-bottom: 20px;
+                border-bottom: 2px solid #0066ff;
+                page-break-after: avoid;
+            }
+
+            .print-header {
+                display: flex !important;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 30px;
+                page-break-after: avoid;
+                gap: 30px;
+            }
+
+            .print-header-left {
+                flex: 1;
+            }
+
+            .print-header h1 {
+                font-size: 32px;
+                font-weight: 700;
+                color: #0066ff;
+                margin: 0 0 8px 0;
+            }
+
+            .print-header p {
+                margin: 4px 0;
+                font-size: 12px;
+                color: #666;
+            }
+
+            body.dark-mode .print-header p {
+                color: #b8b8b8;
+            }
+
+            .print-header a {
+                color: #0066ff;
+                text-decoration: none;
+            }
+
+            body.dark-mode .print-header a {
+                color: #3b82f6;
+            }
+
+            .print-header-right {
+                text-align: right;
+                flex-shrink: 0;
+            }
+
+            .print-profile-image {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 2px solid #0066ff;
+            }
+
+            .print-profile-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
             }
 
             .main-content {
@@ -1067,7 +1152,7 @@
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-profile">
             <div class="profile-image">
-                <i class="fas fa-code"></i>
+                <img src="Sriram.jpeg" alt="Sriram Profile Picture">
             </div>
             <h1>Sriram</h1>
             <p class="title">Senior Developer</p>
@@ -1114,6 +1199,22 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Print Header (visible only when printing) -->
+        <div class="print-header">
+            <div class="print-header-left">
+                <h1>Sriram</h1>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:srirampushpa1998@gmail.com">srirampushpa1998@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+918660897698">+91 8660897698</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/sriram981998" target="_blank">GitHub Profile</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sridhar-sriram-3a369718b" target="_blank">LinkedIn Profile</a></p>
+            </div>
+            <div class="print-header-right">
+                <div class="print-profile-image">
+                    <img src="Sriram.jpeg" alt="Sriram Profile Picture">
+                </div>
+            </div>
+        </div>
+
         <!-- Home Section -->
         <section class="section" id="home">
             <div class="section-header">
