@@ -3,489 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sriram - ATS Resume</title>
+    <title>Sriram – ATS Resume (Side‑by‑Side)</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 11pt;
-            line-height: 1.5;
-            color: #000;
-            background: #fff;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .container {
-            background: #fff;
-            padding: 40px;
-            line-height: 1.6;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #0066ff;
-            padding-bottom: 15px;
-        }
-
-        .header h1 {
-            font-size: 18pt;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #0066ff;
-        }
-
-        .contact-info {
-            font-size: 10pt;
-            line-height: 1.4;
-        }
-
-        .contact-info p {
-            margin: 2px 0;
-        }
-
-        .contact-info a {
-            color: #0066ff;
-            text-decoration: none;
-        }
-
-        /* Two Column Layout */
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .left-column {
-            grid-column: 1;
-        }
-
-        .right-column {
-            grid-column: 2;
-        }
-
-        /* Sections */
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 12pt;
-            font-weight: bold;
-            margin-bottom: 10px;
-            margin-top: 0;
-            border-bottom: 2px solid #0066ff;
-            padding-bottom: 5px;
-            color: #0066ff;
-        }
-
-        /* Professional Summary */
-        .summary-text {
-            font-size: 11pt;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .highlight-item {
-            margin-bottom: 10px;
-            margin-left: 15px;
-            font-size: 10.5pt;
-        }
-
-        .highlight-item strong {
-            display: inline;
-            color: #0066ff;
-            font-weight: bold;
-        }
-
-        /* Experience */
-        .job {
-            margin-bottom: 15px;
-        }
-
-        .job-title {
-            font-weight: bold;
-            font-size: 11pt;
-            color: #333;
-        }
-
-        .job-company {
-            font-style: italic;
-            font-size: 10pt;
-            margin: 2px 0;
-            color: #0066ff;
-        }
-
-        .job-dates {
-            font-size: 10pt;
-            margin: 2px 0;
-            margin-bottom: 5px;
-            color: #666;
-        }
-
-        .job-description {
-            margin-left: 15px;
-        }
-
-        .job-description ul {
-            list-style-type: disc;
-            margin: 5px 0;
-            padding-left: 20px;
-        }
-
-        .job-description li {
-            margin: 4px 0;
-            font-size: 10.5pt;
-            line-height: 1.4;
-        }
-
-        .job-skills {
-            margin: 8px 0 8px 15px;
-            font-size: 9.5pt;
-        }
-
-        .job-skills strong {
-            margin-right: 5px;
-            color: #0066ff;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            margin-right: 6px;
-            background-color: #f0f4ff;
-            padding: 2px 6px;
-            border-radius: 3px;
-            color: #0066ff;
-            font-weight: 500;
-        }
-
-        /* Projects */
-        .project {
-            margin-bottom: 15px;
-        }
-
-        .project-title {
-            font-weight: bold;
-            font-size: 11pt;
-            margin-bottom: 3px;
-            color: #333;
-        }
-
-        .project-description {
-            font-size: 10.5pt;
-            margin: 5px 0;
-            margin-left: 15px;
-            line-height: 1.4;
-        }
-
-        .project-tech {
-            margin: 5px 0 8px 15px;
-            font-size: 9.5pt;
-        }
-
-        .project-tech strong {
-            margin-right: 5px;
-            color: #0066ff;
-        }
-
-        .tech-tag {
-            display: inline-block;
-            margin-right: 5px;
-            background-color: #f0f4ff;
-            padding: 2px 6px;
-            border-radius: 3px;
-            color: #0066ff;
-            font-weight: 500;
-        }
-
-        /* Skills */
-        .skill-category {
-            margin-bottom: 10px;
-            margin-left: 15px;
-            font-size: 10.5pt;
-        }
-
-        .skill-category strong {
-            display: inline-block;
-            font-weight: bold;
-            color: #0066ff;
-            margin-right: 8px;
-            min-width: 130px;
-        }
-
-        .skill-list {
-            display: inline-block;
-            font-size: 10.5pt;
-        }
-
-        .skill-item {
-            display: inline-block;
-            background-color: #f0f4ff;
-            padding: 2px 6px;
-            border-radius: 3px;
-            color: #0066ff;
-            font-weight: 500;
-            margin-right: 5px;
-            margin-bottom: 4px;
-        }
-
-        /* Education */
-        .degree {
-            margin-bottom: 12px;
-        }
-
-        .degree-name {
-            font-weight: bold;
-            font-size: 11pt;
-            color: #333;
-        }
-
-        .degree-school {
-            font-style: italic;
-            font-size: 10pt;
-            margin: 2px 0;
-            color: #0066ff;
-        }
-
-        .degree-info {
-            font-size: 10pt;
-            margin: 2px 0;
-            margin-left: 15px;
-            color: #666;
-        }
-
-        /* Print styles */
+        /* Base Layout */
+        body {font-family: Arial, sans-serif; margin: 0; padding: 0; color: #000; line-height: 1.5; background: #fff;}
+        .print-btn {position: fixed; top: 10px; right: 10px; padding: 5px 10px; font-size: 14px; cursor: pointer; z-index: 1000;}
+        .resume-container {display: flex; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 20px; box-sizing: border-box;}
+        .left-column {flex: 0 0 30%; max-width: 30%; padding-right: 20px; box-sizing: border-box;}
+        .right-column {flex: 0 0 70%; max-width: 70%; box-sizing: border-box;}
+        .header {margin-bottom: 20px;}
+        .header h1 {margin: 0; font-size: 28px;}
+        .contact a {color: #000; text-decoration: none; display: block; margin: 4px 0;}
+        .section {margin-top: 20px;}
+        .section h2 {margin: 0 0 5px; font-size: 22px; border-bottom: 1px solid #000; padding-bottom: 3px;}
+        .section h3 {margin: 5px 0; font-size: 18px;}
+        ul {margin: 0; padding-left: 20px;}
+        li {margin-bottom: 6px;}
         @media print {
-            body {
-                padding: 0;
-            }
-
-            .container {
-                padding: 0;
-                max-width: 100%;
-            }
-
-            .content-wrapper {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            a {
-                color: #0066ff;
-                text-decoration: none;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .content-wrapper {
-                grid-template-columns: 1fr;
-            }
+            .print-btn {display: none;}
+            .resume-container {flex-direction: column; padding: 0;}
+            .left-column, .right-column {max-width: 100%; width: 100%; padding: 0;}
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>SRIRAM</h1>
-            <div class="contact-info">
-                <p>Email: srirampushpa1998@gmail.com | Phone: +91 8660897698</p>
-                <p>GitHub: github.com/sriram981998 | LinkedIn: linkedin.com/in/sridhar-sriram-3a369718b</p>
+    <button class="print-btn" onclick="window.print()">Print</button>
+    <div class="resume-container">
+        <!-- Left Column (Contact + Summary) -->
+        <div class="left-column">
+            <div class="header">
+                <h1>Sriram</h1>
+            </div>
+            <div class="contact">
+                <a href="mailto:srirampushpa1998@gmail.com">srirampushpa1998@gmail.com</a>
+                <a href="tel:+918660897698">+91 8660897698</a>
+                <a href="https://github.com/sriram981998" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/sridhar-sriram-3a369718b" target="_blank">LinkedIn</a>
+            </div>
+            <div class="section" id="summary">
+                <h2>Professional Summary</h2>
+                <p>Senior Software Engineer specializing in automation, scripting, and operational excellence. Experienced in designing robust, maintainable systems that solve complex technical challenges and deliver business value.</p>
             </div>
         </div>
-
-        <!-- Two Column Layout -->
-        <div class="content-wrapper">
-            <!-- LEFT COLUMN -->
-            <div class="left-column">
-                <!-- Professional Summary -->
-                <div class="section">
-                    <div class="section-title">PROFESSIONAL SUMMARY</div>
-                    <p class="summary-text">Full-stack Software Developer with <strong>5+ years</strong> of experience building <strong>scalable applications</strong> and optimizing <strong>system performance</strong>. Expertise in <strong>backend development</strong>, <strong>API design</strong>, and <strong>database optimization</strong>.</p>
-                </div>
-
-                <!-- Experience -->
-                <div class="section">
-                    <div class="section-title">EXPERIENCE</div>
-
-                    <div class="job">
-                        <div class="job-title">Senior Software Developer</div>
-                        <div class="job-company">Harman Connected Services</div>
-                        <div class="job-dates">September 2022 - Present | Bangalore, India</div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Designed and developed <strong>microservices</strong> using <strong>Python</strong> and <strong>Node.js</strong> handling <strong>10M+ daily requests</strong></li>
-                                <li>Optimized <strong>database queries</strong> and implemented <strong>caching strategies</strong> resulting in <strong>40% faster response times</strong></li>
-                                <li>Built <strong>RESTful APIs</strong> and <strong>GraphQL</strong> endpoints with comprehensive testing and documentation</li>
-                                <li>Led <strong>code reviews</strong> and mentored junior developers on <strong>best practices</strong> and <strong>design patterns</strong></li>
-                            </ul>
-                        </div>
-                        <div class="job-skills">
-                            <strong>Technologies:</strong>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">Docker</span>
-                        </div>
-                    </div>
-
-                    <div class="job">
-                        <div class="job-title">Software Developer</div>
-                        <div class="job-company">DXC Technology</div>
-                        <div class="job-dates">June 2020 - August 2022 | Remote</div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Developed <strong>full-stack web applications</strong> using <strong>React</strong>, <strong>Express</strong>, and <strong>MongoDB</strong></li>
-                                <li>Implemented <strong>real-time features</strong> using <strong>WebSocket</strong> and <strong>Socket.io</strong></li>
-                                <li>Created <strong>scalable architecture</strong> supporting <strong>concurrent users</strong> and high-traffic scenarios</li>
-                                <li>Collaborated with <strong>cross-functional teams</strong> to deliver projects on schedule</li>
-                            </ul>
-                        </div>
-                        <div class="job-skills">
-                            <strong>Technologies:</strong>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Express</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">AWS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projects -->
-                <div class="section">
-                    <div class="section-title">PROJECTS</div>
-
-                    <div class="project">
-                        <div class="project-title">E-Commerce Platform</div>
-                        <div class="project-description">Built a <strong>full-stack e-commerce application</strong> with <strong>payment integration</strong>, <strong>order management</strong>, and <strong>real-time inventory</strong>. Achieved <strong>99.9% uptime</strong> and <strong>sub-100ms response</strong> times.</div>
-                        <div class="project-tech">
-                            <strong>Stack:</strong>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-title">Data Analytics Dashboard</div>
-                        <div class="project-description">Developed <strong>real-time analytics dashboard</strong> with <strong>data visualization</strong>, <strong>custom reports</strong>, and <strong>export functionality</strong>. Processed <strong>50M+ data points</strong> daily with optimized queries.</div>
-                        <div class="project-tech">
-                            <strong>Stack:</strong>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">GraphQL</span>
-                            <span class="tech-tag">Elasticsearch</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Right Column (Experience, Projects, Skills, Education) -->
+        <div class="right-column">
+            <div class="section" id="experience">
+                <h2>Experience</h2>
+                <h3>Senior Software Engineer – Harman Connected Services (Sept 2022 – Present)</h3>
+                <ul>
+                    <li>Develop automation scripts and tools across multiple languages to streamline deployment and monitoring.</li>
+                    <li>Optimized database queries and caching, achieving 40% faster response times.</li>
+                    <li>Migrated legacy data, reducing manual effort by 80% with a 95% success rate.</li>
+                </ul>
+                <h3>Professional Software Engineer – DXC Technology (Jun 2020 – Aug 2022)</h3>
+                <ul>
+                    <li>Created Unix and Python automation reducing manual intervention by 99%.</li>
+                    <li>Implemented comprehensive error handling and logging systems.</li>
+                    <li>Integrated automation solutions into existing workflows in collaboration with cross‑functional teams.</li>
+                </ul>
             </div>
 
-            <!-- RIGHT COLUMN -->
-            <div class="right-column">
-                <!-- Technical Skills -->
-                <div class="section">
-                    <div class="section-title">TECHNICAL SKILLS</div>
+            <div class="section" id="projects">
+                <h2>Projects</h2>
+                <h3>Data Migration Pipeline</h3>
+                <ul>
+                    <li>PowerShell scripts to extract, transform, and migrate large datasets via REST APIs to MSSQL with 90% success rate.</li>
+                    <li>Added logging and error handling, reducing manual effort by 80%.</li>
+                </ul>
+                <h3>Automation Orchestrator</h3>
+                <ul>
+                    <li>Central scheduler for PowerShell scripts across Windows servers with HTML dashboard for real‑time monitoring.</li>
+                    <li>Integrated email/SMS alerts, achieving 98% automation success.</li>
+                </ul>
+            </div>
 
-                    <div class="skill-category">
-                        <strong>Languages:</strong>
-                        <div>
-                            <span class="skill-item">Python</span>
-                            <span class="skill-item">JavaScript</span>
-                            <span class="skill-item">TypeScript</span>
-                            <span class="skill-item">SQL</span>
-                        </div>
-                    </div>
+            <div class="section" id="skills">
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li>Languages: Python, PowerShell, JavaScript (Node.js/Express), Bash</li>
+                    <li>Databases: MSSQL, MySQL, query optimization</li>
+                    <li>DevOps: Docker, Kubernetes, AWS, Jenkins, GitHub Actions, Git</li>
+                    <li>Tools: REST APIs, CI/CD pipelines, automation scripting</li>
+                    <li>Concurrency: multiprocessing, multithreading, async/await</li>
+                </ul>
+            </div>
 
-                    <div class="skill-category">
-                        <strong>Frontend:</strong>
-                        <div>
-                            <span class="skill-item">React</span>
-                            <span class="skill-item">Vue.js</span>
-                            <span class="skill-item">HTML/CSS</span>
-                            <span class="skill-item">Redux</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <strong>Backend:</strong>
-                        <div>
-                            <span class="skill-item">Node.js</span>
-                            <span class="skill-item">Express</span>
-                            <span class="skill-item">Django</span>
-                            <span class="skill-item">FastAPI</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <strong>Databases:</strong>
-                        <div>
-                            <span class="skill-item">PostgreSQL</span>
-                            <span class="skill-item">MySQL</span>
-                            <span class="skill-item">MongoDB</span>
-                            <span class="skill-item">Redis</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <strong>DevOps & Cloud:</strong>
-                        <div>
-                            <span class="skill-item">Docker</span>
-                            <span class="skill-item">Kubernetes</span>
-                            <span class="skill-item">AWS</span>
-                            <span class="skill-item">CI/CD</span>
-                            <span class="skill-item">GitHub Actions</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <strong>Tools & Practices:</strong>
-                        <div>
-                            <span class="skill-item">Git</span>
-                            <span class="skill-item">REST APIs</span>
-                            <span class="skill-item">GraphQL</span>
-                            <span class="skill-item">Microservices</span>
-                            <span class="skill-item">System Design</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="section">
-                    <div class="section-title">EDUCATION</div>
-
-                    <div class="degree">
-                        <div class="degree-name">Master of Technology in Data Science</div>
-                        <div class="degree-school">BITS Pilani</div>
-                        <div class="degree-info">Graduation: 2024 | CGPA: 5.6/10</div>
-                    </div>
-
-                    <div class="degree">
-                        <div class="degree-name">Bachelor of Technology in Mechatronics</div>
-                        <div class="degree-school">Visvesvaraya Technological University</div>
-                        <div class="degree-info">Graduation: 2020 | CGPA: 6.8/10</div>
-                    </div>
-                </div>
-
-                <!-- Certifications -->
-                <div class="section">
-                    <div class="section-title">CERTIFICATIONS</div>
-                    <div class="skill-category">
-                        <strong>Python Programming:</strong>
-                        <div>Python Institute - Entry Level Certification</div>
-                    </div>
-                </div>
+            <div class="section" id="education">
+                <h2>Education</h2>
+                <h3>Master of Technology – Data Science, BITS Pilani (2024)</h3>
+                <p>CGPA: 5.6/10</p>
+                <h3>Bachelor of Technology – Mechatronics, Visvesvaraya Technological University (2020)</h3>
+                <p>CGPA: 6.8/10</p>
             </div>
         </div>
     </div>
