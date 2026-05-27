@@ -3,102 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sriram – ATS Resume (Side‑by‑Side)</title>
+    <title>Sriram – ATS Resume</title>
     <style>
-        /* Base Layout */
-        body {font-family: Arial, sans-serif; margin:0; padding:0; background:#fff; color:#000; line-height:1.5;}
-        .print-btn {position:fixed; top:10px; right:10px; padding:5px 10px; font-size:14px; cursor:pointer; z-index:1000;}
-        .resume-container {display:flex; flex-wrap:wrap; max-width:1200px; margin:0 auto; padding:20px; box-sizing:border-box;}
-        .left-column {flex:0 0 30%; max-width:30%; padding-right:20px; box-sizing:border-box;}
-        .right-column {flex:0 0 70%; max-width:70%; box-sizing:border-box;}
-        .header {margin-bottom:20px;}
-        .header h1 {margin:0; font-size:28px; color:#003366;}
-        .contact a {color:#000; text-decoration:none; display:block; margin:4px 0;}
-        .section {margin-top:20px;}
-        .section h2 {margin:0 0 5px; font-size:22px; border-bottom:1px solid #003366; padding-bottom:3px; color:#003366;}
-        .section h3 {margin:5px 0; font-size:18px; color:#003366;}
-        ul {margin:0; padding-left:20px;}
-        li {margin-bottom:6px;}
-        @media print {
-            .print-btn {display:none;}
-            .resume-container {flex-direction:column; padding:0;}
-            .left-column, .right-column {max-width:100%; width:100%; padding:0;}
-        }
+        body{font-family:Arial,sans-serif;margin:0;padding:0;background:#fff;color:#000;line-height:1.5;font-size:12px;}
+        .print-btn{position:fixed;top:10px;right:10px;padding:5px 10px;font-size:14px;cursor:pointer;z-index:1000;}
+        .resume-container{max-width:210mm;margin:auto;padding:8px;box-sizing:border-box;}
+        .header h1{margin:0;font-size:18px;color:#003366;}
+        .contact a{color:#000;text-decoration:none;display:inline-block;margin-right:8px;font-size:11px;}
+        .section{margin-top:10px;}
+        .section h2{margin:0 0 3px;font-size:14px;border-bottom:1px solid #003366;color:#003366;padding-bottom:2px;}
+        .section h3{margin:4px 0;font-size:13px;color:#003366;}
+        ul{margin:0;padding-left:15px;}
+        li{margin-bottom:4px;font-size:11px;}
+        @media print{.print-btn{display:none;}}@page{size:A4;margin:20mm;}
     </style>
 </head>
 <body>
-    <button class="print-btn" onclick="window.print()">Print</button>
-    <div class="resume-container">
-        <!-- Left Column – Contact & Summary -->
-        <div class="left-column">
-            <div class="header">
-                <h1>Sriram</h1>
-            </div>
-            <div class="contact">
-                <a href="mailto:srirampushpa1998@gmail.com">srirampushpa1998@gmail.com</a>
-                <a href="tel:+918660897698">+91 8660897698</a>
-                <a href="https://github.com/sriram981998" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/sridhar-sriram-3a369718b" target="_blank">LinkedIn</a>
-            </div>
-            <div class="section" id="summary">
-                <h2>Professional Summary</h2>
-                <p>Senior Software Engineer with 5+ years of experience designing and delivering automation solutions, scripting frameworks, and operational tools. Expertise in Python, PowerShell, Bash, CI/CD pipelines, and cloud‑native deployments. Proven ability to improve system performance, reduce manual effort, and enable rapid, reliable releases.</p>
-            </div>
-        </div>
-        <!-- Right Column – Experience, Projects, Skills, Education -->
-        <div class="right-column">
-            <div class="section" id="experience">
-                <h2>Experience</h2>
-                <h3>Senior Software Engineer – Harman Connected Services (Sept 2022 – Present)</h3>
-                <ul>
-                    <li>Developed cross‑platform automation scripts in Python, PowerShell, and Bash to orchestrate CI/CD pipelines, cutting deployment time by ~35%.</li>
-                    <li>Optimized MSSQL queries with indexing, caching, and batch processing, delivering 40% faster response times and a 20% reduction in DB load.</li>
-                    <li>Designed a data‑migration framework using REST APIs, transactional batch processing, and robust logging; reduced manual effort by 80% and achieved a 95% success rate with zero data loss.</li>
-                    <li>Implemented monitoring dashboards (HTML + JavaScript) and alerting via email/SMS, improving incident detection time by 60%.</li>
-                </ul>
-                <h3>Professional Software Engineer – DXC Technology (Jun 2020 – Aug 2022)</h3>
-                <ul>
-                    <li>Created Unix shell and Python automation that fully automated daily data ingestion pipelines, reducing manual intervention by 99% and ensuring SLA compliance.</li>
-                    <li>Added structured JSON logging and centralized error handling with email/SMS alerts, cutting mean‑time‑to‑detect incidents by 70%.</li>
-                    <li>Integrated automation into CI pipelines (Jenkins, GitHub Actions) in collaboration with QA and product teams, enabling 2× faster release cycles.</li>
-                </ul>
-            </div>
-
-            <div class="section" id="projects">
-                <h2>Projects</h2>
-                <h3>Data Migration Pipeline</h3>
-                <ul>
-                    <li>Built PowerShell scripts that extract, transform, and load (ETL) large datasets via REST APIs into MSSQL, handling >10 GB per run.</li>
-                    <li>Implemented parallel processing and retry logic, achieving a 90% overall success rate with detailed audit logs.</li>
-                    <li>Reduced manual effort by 80% and eliminated data‑integrity issues through transactional batch commits.</li>
-                </ul>
-                <h3>Automation Orchestrator</h3>
-                <ul>
-                    <li>Created a central scheduler (Python + PowerShell) that runs and monitors automation jobs across 30+ Windows servers.</li>
-                    <li>Developed an HTML dashboard with real‑time status, success metrics, and log access.</li>
-                    <li>Integrated email/SMS alerts for job failures, reaching 98% automation success and reducing mean‑time‑to‑resolve by 15%.</li>
-                </ul>
-            </div>
-
-            <div class="section" id="skills">
-                <h2>Technical Skills</h2>
-                <ul>
-                    <li>Languages: Python, PowerShell, Bash, JavaScript (Node.js/Express)</li>
-                    <li>Databases: MSSQL, MySQL, query optimization, indexing, transactional batch processing</li>
-                    <li>DevOps & Cloud: Docker, Kubernetes, AWS (EC2, S3, Lambda), Jenkins, GitHub Actions, Git, CI/CD pipeline design</li>
-                    <li>Automation & Scripting: REST API consumption, ETL pipelines, HTML/JS dashboards, email/SMS alerting, logging frameworks</li>
-                    <li>Concurrency & Parallelism: multiprocessing, multithreading, async/await, parallel PowerShell jobs</li>
-                </ul>
-            </div>
-
-            <div class="section" id="education">
-                <h2>Education</h2>
-                <h3>Master of Technology – Data Science, BITS Pilani (2024)</h3>
-                <p>Focused on machine learning, statistical modeling, and big‑data processing.</p>
-                <h3>Bachelor of Technology – Mechatronics, Visvesvaraya Technological University (2020)</h3>
-                <p>Emphasis on control systems, embedded programming, and hardware‑software integration.</p>
-            </div>
-        </div>
+<button class="print-btn" onclick="window.print()">Print</button>
+<div class="resume-container">
+    <div class="header"><h1>Sriram</h1></div>
+    <div class="contact">
+        <a href="mailto:srirampushpa1998@gmail.com">srirampushpa1998@gmail.com</a>
+        <a href="tel:+918660897698">+91 8660897698</a>
+        <a href="https://github.com/sriram981998" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/sridhar-sriram-3a369718b" target="_blank">LinkedIn</a>
     </div>
+    <div class="section" id="summary"><h2>Professional Summary</h2><p>Senior Software Engineer with 5+ years delivering automation, scripting, and cloud‑native solutions; skilled in Python, PowerShell, Bash, CI/CD, and cloud platforms; improves performance, cuts manual effort, and speeds releases.</p></div>
+    <div class="section" id="skills"><h2>Technical Skills</h2><ul>
+        <li>Languages: Python, PowerShell, Bash, JavaScript (Node.js/Express)</li>
+        <li>Databases: MSSQL, MySQL, query optimization, indexing, transactional batch processing</li>
+        <li>DevOps & Cloud: Docker, Kubernetes, AWS (EC2, S3, Lambda), Jenkins, GitHub Actions, Git, CI/CD pipeline design</li>
+        <li>Automation & Scripting: REST API consumption, ETL pipelines, HTML/JS dashboards, email/SMS alerting, logging frameworks</li>
+        <li>Concurrency & Parallelism: multiprocessing, multithreading, async/await, parallel PowerShell jobs</li>
+    </ul></div>
+    <div class="section" id="experience"><h2>Experience</h2>
+        <h3>Senior Software Engineer – Harman Connected Services (Sept 2022 – Present)</h3>
+        <ul>
+            <li>Built cross‑platform CI/CD automation (Python/PowerShell/Bash), cutting deployment time ~35%.</li>
+            <li>Optimized MSSQL queries via indexing/caching, boosting speed 40% and cutting DB load 20%.</li>
+            <li>Developed REST‑API data‑migration framework, reducing manual effort 80% with 95% success, zero loss.</li>
+            <li>Added monitoring dashboards + email/SMS alerts, improving incident detection 60%.</li>
+            <li>Created Python‑PowerShell scheduler for 30+ Windows servers; added real‑time HTML dashboard.</li>
+<li>Scheduler exposes a REST API for job submission, status queries, and result retrieval.</li>
+<li>Dashboard provides real‑time metrics and historical logs, enabling quick troubleshooting.</li>
+            <li>Implemented email/SMS alerts for job failures, achieving 98% success and cutting MTTR 15%.</li>
+        </ul>
+        <h3>Professional Software Engineer – DXC Technology (Jun 2020 – Aug 2022)</h3>
+        <ul>
+            <li>Automated daily data ingestion with Unix shell/Python, cutting manual work 99% and meeting SLA.</li>
+            <li>Added JSON logging + email/SMS alerts, lowering incident detection time 70%.</li>
+            <li>Integrated automation into Jenkins & GitHub Actions, doubling release speed.</li>
+            <li>Built PowerShell ETL scripts for >10 GB runs via REST APIs.</li>
+<li>Added data validation and schema enforcement, ensuring 100% data consistency.</li>
+<li>Implemented incremental loads, cutting processing time by ~30%.</li>
+<li>Created monitoring dashboards with alerts for ETL failures, improving reliability.</li>
+            <li>Used parallel processing & retries, achieving 90% success with detailed logs.</li>
+            <li>Reduced manual effort 80% and eliminated data‑integrity issues via transactional batch commits.</li>
+        </ul>
+    </div>
+    <div class="section" id="education"><h2>Education</h2>
+        <p>MTech – Data Science, BITS Pilani (2024)</p>
+        <p>BTech – Mechatronics, Visvesvaraya Technological University (2020)</p>
+    </div>
+</div>
 </body>
 </html>
